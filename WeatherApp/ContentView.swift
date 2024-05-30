@@ -104,13 +104,7 @@ struct ContentView: View {
             do {
                 let decoder = JSONDecoder()
                 let weatherResponse = try decoder.decode(WeatherResponse.self, from: data)
-                // 
-//                CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
-//                                    if let placemark = placemarks?.first {
-//                                        weatherData?.locationName = placemark.locality ?? ""
-//                                    }
-//                                }
-                
+
                 DispatchQueue.main.async {
                     self.weatherData = WeatherData(
                         locationName: weatherResponse.name,
